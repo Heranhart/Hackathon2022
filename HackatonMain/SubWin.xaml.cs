@@ -10,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace HackatonMain
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour SubWin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SubWin : Window
     {
-        public MainWindow()
+        public SubWin()
         {
             InitializeComponent();
-            DataContext = new MainWindowVM();
-            LanguageComboBox.SelectedValue = "English";
         }
     }
-
-
 }

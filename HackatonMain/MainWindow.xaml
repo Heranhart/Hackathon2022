@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HackatonMain"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        ResizeMode="CanMinimize"
+        
+        Title="MainWindow" Height="450" Width="800" Background="AntiqueWhite">
+    <StackPanel Orientation="Vertical" Name="Page1" HorizontalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
+            <Label Height="50" VerticalContentAlignment="Center">
+                Damb
+            </Label>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
+            Welcome to our subscription form. Please select a language<LineBreak/>
+        </TextBlock>
+        <ComboBox Name="LanguageComboBox" 
+                  Width="80"
+                  ItemsSource="{Binding Path=LanguageList}"
+                  DisplayMemberPath="."
+                  SelectedValuePath="."
+                  SelectedItem="{Binding Path=SelectedLanguage}"
+                  
+                   />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            
+                <TextBlock> Selected language : </TextBlock>
+                <TextBlock Height="60" Text="{Binding Path=SelectedLanguage}"/>
+        </StackPanel>
+   
 
-    </Grid>
+
+
+    </StackPanel>
 </Window>
+    
