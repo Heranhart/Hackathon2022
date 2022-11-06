@@ -33,6 +33,13 @@ namespace HackatonMain
             if (IsActualWindow)
             {
                 TextBoxFail.Visibility = Visibility.Hidden;
+                var wins = Application.Current.Windows.Cast<Window>().Count(wi => wi.Title == "Terms of service");
+                if(wins > 1)
+                {
+                    var s = TextBoxSuccess.Inlines.Last() as Run;
+                    s.Text = s.Text.Remove(s.Text.Length - 1, 1) + " ";
+                    TextBoxSuccess.Inlines.Add(new Run("(and the others !)."));
+                }
             }
             else
             {

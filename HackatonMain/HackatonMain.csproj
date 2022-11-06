@@ -7,4 +7,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\rickroll.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Assets\rickroll.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XamlAnimatedGif" Version="2.0.3" />
+  </ItemGroup>
+
 </Project>

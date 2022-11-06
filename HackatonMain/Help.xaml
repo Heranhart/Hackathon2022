@@ -1,0 +1,16 @@
+﻿<Window x:Class="HackatonMain.Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HackatonMain"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        MaxHeight="300"
+        Title="Help window">
+   
+        <!--<Image gif:AnimationBehavior.SourceUri="pack://application:,,,/Assets/rickroll.gif" gif:AnimationBehavior.RepeatBehavior="Forever"/>-->
+    <Image gif:AnimationBehavior.SourceUri="\Assets\rickroll.gif" gif:AnimationBehavior.RepeatBehavior="Forever"/>
+   
+</Window>

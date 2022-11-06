@@ -6,54 +6,17 @@
         xmlns:local="clr-namespace:HackatonMain"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        
-        Title="MainWindow" Height="450" Width="800" Background="AntiqueWhite">
-    <Page Name="IntroPage">
-
-        <StackPanel Orientation="Vertical" Name="Page1" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-            <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
-            <Label Height="50" VerticalContentAlignment="Center">
-                Damb
-            </Label>
+        SizeToContent="WidthAndHeight"
+        Title="Why.exe" MaxHeight="450" MaxWidth="800" MouseLeftButtonUp="Window_MouseLeftButtonUp">
+    <Window.Content>
+        <StackPanel Orientation="Vertical">
+            
+        <Frame NavigationUIVisibility="Hidden" Name="_main"></Frame>
+            <TextBlock Background="Aqua" Name="HelpText">
+                Need help ? <Hyperlink Click="Hyperlink_Click">Click here</Hyperlink>.
             </TextBlock>
-            <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
-            Welcome to our subscription form. Please select a language<LineBreak/>
-            </TextBlock>
-            <ComboBox Name="LanguageComboBox" 
-                  Width="80"
-                  ItemsSource="{Binding Path=LanguageList}"
-                  DisplayMemberPath="."
-                  SelectedValuePath="."
-                  SelectedItem="{Binding Path=SelectedLanguage}"
-                  
-                   />
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-                <TextBlock> Selected language :</TextBlock>
-                <TextBlock Height="60" Text="{Binding Path=SelectedLanguage}"/>
-            </StackPanel>
-
-            <CheckBox Checked="CheckRead" IsChecked="{Binding Path=UseAgreement, Mode=TwoWay}">
-
-                <TextBlock>I have read and accepted the
-                <Hyperlink Click="OpenPolicyWindow">
-                    Privacy Agreement
-                </Hyperlink> and <Hyperlink Click="OpenTosWindow">Terms of Service</Hyperlink>
-                </TextBlock>
-            </CheckBox>
-            <!--<StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center">-->
-
-                <Button Height="70" Width="400" Padding="10" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="0,70" Click="Button_Click">
-                    
-                    <Label FontSize="30">
-                        Start !
-
-                    </Label>
-                </Button>
-            <!--</StackPanel>-->
-
-
         </StackPanel>
-    </Page>
+    </Window.Content>
+
 </Window>
     
