@@ -30,7 +30,7 @@ namespace HackatonMain
             DataContext = new MainWindowVM();
             
 #if DEBUG
-            _main.NavigationService.Navigate(new FirstNamePage());
+            _main.NavigationService.Navigate(new DateOfBirthPage());
 #else
             _main.NavigationService.Navigate(new IntroPage());
 #endif

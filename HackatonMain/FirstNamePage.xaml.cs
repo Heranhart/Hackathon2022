@@ -126,7 +126,7 @@ namespace HackatonMain
                     MainWindow mw = Application.Current.MainWindow as MainWindow;
                     MainWindowVM vm = mw.DataContext as MainWindowVM;
                     vm.FirstName = InputTextBox.Text;
-                    mw._main.NavigationService.Navigate(new FirstNamePage());
+                    mw._main.NavigationService.Navigate(new LastNamePage());
                     //mw._main.NavigationService.Clo
 
                 }
