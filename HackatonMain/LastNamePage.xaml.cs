@@ -120,7 +120,7 @@ namespace HackatonMain
                     MainWindow mw = Application.Current.MainWindow as MainWindow;
                     MainWindowVM vm = mw.DataContext as MainWindowVM;
                     vm.LastName = Keyboard.Text;
-                    mw._main.NavigationService.Navigate(new SummaryPage());
+                    mw._main.NavigationService.Navigate(new DateOfBirthPage());
                 }
                 else
                     Validate(sender, e);

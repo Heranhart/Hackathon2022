@@ -10,8 +10,8 @@
         Title="Why.exe" MaxHeight="450" MaxWidth="800" MouseLeftButtonUp="Window_MouseLeftButtonUp">
     <Window.Content>
         <StackPanel Orientation="Vertical">
-            
-        <Frame NavigationUIVisibility="Hidden" Name="_main"></Frame>
+
+            <Frame NavigationUIVisibility="Hidden" Name="_main" MouseLeftButtonUp="Window_MouseLeftButtonUp"/>
             <TextBlock Background="Aqua" Name="HelpText">
                 Need help ? <Hyperlink Click="Hyperlink_Click">Click here</Hyperlink>.
             </TextBlock>

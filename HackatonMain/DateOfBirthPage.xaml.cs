@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -74,6 +75,19 @@ namespace HackatonMain
             InputDay.GetBindingExpression(TextBlock.TextProperty).UpdateTarget();
             InputMonth.GetBindingExpression(TextBlock.TextProperty).UpdateTarget();
             InputYear.GetBindingExpression(TextBlock.TextProperty).UpdateTarget();
+        }
+
+        private void Validate(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show(String.Format("That day was a {0}, right ?", Vm.Date.AddDays(new Random().Next(0, 6)).DayOfWeek.ToString()), "Confirmation",MessageBoxButton.YesNo) == MessageBoxResult.Yes
+                || MessageBox.Show(String.Format("Really ? Hmm... Would you like to confirm anyways ? (May lead to issues down the line. Consider yourself warned)"), "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+                MainWindowVM vm = mainWindow.DataContext as MainWindowVM;
+                vm.DateOfBirth = Vm.Date;
+                mainWindow._main.Navigate(new PhoneNumberPage());                
+            }
+
         }
     }
     public class DateOfBirthVm

@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HackatonMain"
       mc:Ignorable="d" 
-      Height="450" Width="800" Background="Violet"
+      MaxHeight="450" Width="800" Background="Violet"
       Title="DateOfBirthPage">
-    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50">
         <TextBlock FontSize="30">Enter your date of birth (DD/AAAA/MM) :</TextBlock>
         <TextBlock FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Name="InputDay"   TextAlignment="Right"  Text="{Binding Path=Date.Day}" />
-            /<TextBlock Name="InputYear"   TextAlignment="Right"  Text="{Binding Path=Date.Year}"/>
+            <TextBlock Name="InputDay"  TextAlignment="Right"  Text="{Binding Path=Date.Day}"/>
+            /<TextBlock Name="InputYear"  TextAlignment="Right"  Text="{Binding Path=Date.Year}"/>
             /<TextBlock Name="InputMonth"  TextAlignment="Right"  Text="{Binding Path=Date.Month}"/>
         </TextBlock>
         <Grid>
@@ -31,5 +31,8 @@
             <Button Grid.Column="2" Grid.Row="0" Margin="20,10" Click="Add1Month"> +1 months</Button>
             <Button Grid.Column="2" Grid.Row="1" Margin="20,10" Click="Remonve3Months"> -3 months</Button>
         </Grid>
+        <Button Click="Validate" Width="83" Margin="0,30,0,0">
+            Next
+        </Button>
     </StackPanel>
 </Page>

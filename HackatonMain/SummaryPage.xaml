@@ -15,6 +15,12 @@
         <TextBlock>Last Name : 
             <TextBlock Text="{Binding Path=LastName}"/>
         </TextBlock>
+        <TextBlock>Email address: 
+            <TextBlock Text="{Binding Path=Email}"/>
+        </TextBlock>
+        <TextBlock>Phone number : 
+            <TextBlock Text="{Binding Path=PhoneNumber}"/>
+        </TextBlock>
 
     </StackPanel>
 </Page>
