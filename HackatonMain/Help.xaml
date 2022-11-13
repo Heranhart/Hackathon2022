@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         SizeToContent="WidthAndHeight"
         MaxHeight="300"
-        Title="Help window">
+        Title="Help">
    
-        <!--<Image gif:AnimationBehavior.SourceUri="pack://application:,,,/Assets/rickroll.gif" gif:AnimationBehavior.RepeatBehavior="Forever"/>-->
+        
     <Image gif:AnimationBehavior.SourceUri="\Assets\rickroll.gif" gif:AnimationBehavior.RepeatBehavior="Forever"/>
    
 </Window>

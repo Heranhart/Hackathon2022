@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Windows.Threading;
 
 namespace HackatonMain
 {
@@ -23,17 +23,22 @@ namespace HackatonMain
     /// </summary>
     public partial class MainWindow : Window
     {
+        public DispatcherTimer GlobalTimer { get; set; }
+
         MainWindowVM vm { get => this.DataContext as MainWindowVM; }
         public MainWindow()
         {
+            while(!new LanguageSelectionWindow().ShowDialog() ?? false)
+            {
+                MessageBox.Show("Please select a language, or we will not be able to start !");
+            };
             InitializeComponent();
-            DataContext = new MainWindowVM();
-            
-#if DEBUG
-            _main.NavigationService.Navigate(new PhoneNumberPage());
-#else
+            var vm =new MainWindowVM();
+            GlobalTimer = new DispatcherTimer();
+            GlobalTimer.Start();
+            DataContext = vm;
             _main.NavigationService.Navigate(new IntroPage());
-#endif
+
             //LanguageComboBox.SelectedValue = "English";
         }
 
@@ -61,6 +66,19 @@ namespace HackatonMain
             result = (Brush)properties[random].GetValue(null, null);
 
             return result;
+        }
+
+        private void _main_Navigating(object sender, NavigatingCancelEventArgs e)
+        {
+            //MessageBox.Show("NavDamb");
+            // TODO verif human window
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(!(MessageBox.Show("Are you sure you want to exist ?","Exiting",MessageBoxButton.YesNo) == MessageBoxResult.Yes)){
+                e.Cancel = true;
+            }
         }
         //private void OpenPolicyWindow(object sender, RoutedEventArgs e)
         //{

@@ -20,6 +20,7 @@ namespace HackatonMain
     /// </summary>
     public partial class LastNamePage : Page
     {
+        public long Key { get; set; }
         public int keyboardLen { get; set; }
         Char[] chars = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ-".ToCharArray();
         public string LastName { get; set; }
@@ -27,13 +28,14 @@ namespace HackatonMain
         {
             keyboardLen = 30;
             InitializeComponent();
+            Key = 0;
             GenerateKeyboard(keyboardLen);
         }
 
         List<Run> runs { get; set; }
         private void GenerateKeyboard(int len)
         {
-
+            Key += len *2;
             runs = new List<Run>();
             Run run;
             Label label;
@@ -43,7 +45,7 @@ namespace HackatonMain
                 label = new Label();
 
                 run = new Run(chars[new Random().Next(chars.Length)].ToString());
-                run.Name = "l" + len.ToString();
+                run.Name = "l" + (Key+len).ToString();
 
                 //label.Name = "l" + len.ToString();
 
@@ -120,7 +122,7 @@ namespace HackatonMain
                     MainWindow mw = Application.Current.MainWindow as MainWindow;
                     MainWindowVM vm = mw.DataContext as MainWindowVM;
                     vm.LastName = Keyboard.Text;
-                    mw._main.NavigationService.Navigate(new DateOfBirthPage());
+                    mw._main.NavigationService.Navigate(new EmailPage());
                 }
                 else
                     Validate(sender, e);

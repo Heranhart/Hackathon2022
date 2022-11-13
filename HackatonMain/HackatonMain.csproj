@@ -8,11 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\cm.png" />
     <None Remove="Assets\rickroll.gif" />
+    <None Remove="Assets\ucm.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <SplashScreen Include="Assets\rickroll.gif" />
+    <Resource Include="Assets\cm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\rickroll.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\ucm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

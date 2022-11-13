@@ -29,14 +29,14 @@ namespace HackatonMain
         private void OpenPolicyWindow(object sender, RoutedEventArgs e)
         {
             PolicyWindow pol = new PolicyWindow();
-            pol.Show();
+            ((MainWindowVM)DataContext).PolAgreement = pol.ShowDialog() ?? false;
 
         }
         private void OpenTosWindow(object sender, RoutedEventArgs e)
         {
             TosWindow tos = new TosWindow();
             tos.Owner = Application.Current.MainWindow;
-            tos.ShowDialog();
+            ((MainWindowVM)DataContext).UseAgreement =  tos.ShowDialog()??false;
 
         }
 
@@ -45,8 +45,8 @@ namespace HackatonMain
             var vm = this.DataContext as MainWindowVM;
             if (!vm.UseAgreement || !vm.PolAgreement)
             {
-                MessageBox.Show("Please make your you read both the Privacy Agreement and the Terms of Service");
-                e.Handled = true;
+                MessageBox.Show("Please make sure you read both the Privacy Agreement and the Terms of Service before clicking the box.");
+                //e.Handled = true;
                 var c = (CheckBox)sender;
                 c.IsChecked = false;
             }
@@ -54,7 +54,7 @@ namespace HackatonMain
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            var vm = Application.Current.MainWindow.DataContext as MainWindowVM;
+            var vm = (MainWindowVM)DataContext ;/* Application.Current.MainWindow.DataContext as MainWindowVM;*/
             if (vm.UseAgreement && vm.PolAgreement)
             {
                 MessageBox.Show("Let's go!");
@@ -62,7 +62,7 @@ namespace HackatonMain
                 mv._main.NavigationService.Navigate(new FirstNamePage());
             }
             else
-                MessageBox.Show("Please make sure you read both our terms of use and privacy policy. The links should bring you there.");
+                MessageBox.Show("Please make sure you read both our Terms of Service and privacy policy. The links should bring you there.");
         }
     }
 }

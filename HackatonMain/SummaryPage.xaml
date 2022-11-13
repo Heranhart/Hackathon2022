@@ -6,21 +6,36 @@
       xmlns:local="clr-namespace:HackatonMain"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800" Background="IndianRed"
-      Title="SummaryPage" DataContext="{Binding ElementName=_main}">
-    <StackPanel>
-        <TextBlock>Summary :</TextBlock>
-        <TextBlock>First Name : 
-            <TextBlock Text="{Binding Path=FirstName}"/>
+      Title="SummaryPage">
+    <StackPanel Margin="30">
+        <TextBlock FontSize="20" FontWeight="DemiBold" TextWrapping="Wrap" HorizontalAlignment="Stretch" TextAlignment="Justify"> You are almost done ! Please double check and confirm that all your entries have been correctly registered, so we can go to the last step !</TextBlock>
+        <TextBlock HorizontalAlignment="Center"  Margin="10" FontSize="30" FontWeight="ExtraBold">Summary :</TextBlock>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Right" Grid.Column="0" FontWeight="Bold">First Name :&#160;</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Name="FirstName" Text="{Binding Path=FirstName}"/>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Right" Grid.Column="0" FontWeight="Bold">Last Name :&#160;</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Name="LastName" Text="{Binding Path=LastName}"/>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Right" Grid.Column="0" FontWeight="Bold">Email address :&#160;</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1"  Name="Email" Text="{Binding Path=Email}"/>
+            <TextBlock Grid.Row="3" HorizontalAlignment="Right" Grid.Column="0" FontWeight="Bold">Date of birth (MM/DD/AAAA):&#160;</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1" Name="DateOfBirth" Text="{Binding Path=DateOfBirth, StringFormat=d}"/>
+            <TextBlock Grid.Row="4" HorizontalAlignment="Right" Grid.Column="0" FontWeight="Bold">Phone number :&#160;</TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="1"  Name="PhoneNumber" Text="{Binding Path=PhoneNumber}"/>
+        </Grid>
+        <Button Click="Button_Click" Width="138" Height="32" Margin="0,20,0,5">Confirm</Button>
+        <TextBlock HorizontalAlignment="Center">
+            <Hyperlink Click="Wrong" >This is not what I submitted.</Hyperlink>
         </TextBlock>
-        <TextBlock>Last Name : 
-            <TextBlock Text="{Binding Path=LastName}"/>
-        </TextBlock>
-        <TextBlock>Email address: 
-            <TextBlock Text="{Binding Path=Email}"/>
-        </TextBlock>
-        <TextBlock>Phone number : 
-            <TextBlock Text="{Binding Path=PhoneNumber}"/>
-        </TextBlock>
-
     </StackPanel>
 </Page>

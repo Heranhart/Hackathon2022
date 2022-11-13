@@ -21,6 +21,7 @@ namespace HackatonMain
     /// </summary>
     public partial class FirstNamePage : Page
     {
+        public int Key { get; set; }
         FirstNamePageVm Vm { get => DataContext as FirstNamePageVm; set => DataContext = value; }
 
         Char[] chars = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ-".ToCharArray();
@@ -29,6 +30,7 @@ namespace HackatonMain
         {
             DataContext = new FirstNamePageVm();
             InitializeComponent();
+            Key = 0;
             
             GenerateKeyboard(100);
 
@@ -58,7 +60,7 @@ namespace HackatonMain
         List<Run> runs { get; set; }
         private void GenerateKeyboard(int len)
         {
-            
+            Key += len;
             runs=new List<Run>();
             Run run;
             Label label;
@@ -68,7 +70,7 @@ namespace HackatonMain
                 label = new Label();
 
                 run = new Run(chars[new Random().Next(chars.Length)].ToString());
-                run.Name = "l" + len.ToString();
+                run.Name = "l" + (len+Key).ToString();
                 
                 //label.Name = "l" + len.ToString();
 

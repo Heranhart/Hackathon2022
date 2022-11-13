@@ -25,7 +25,7 @@ namespace HackatonMain
             var vm = new TosVm();
             Random rnd = new Random();
             var r = rnd.Next(100);
-            if (r > 50)
+            if (r > 80)
                 vm.IsActualWindow = true;
             DataContext = vm;
             IsActualWindow = vm.IsActualWindow;

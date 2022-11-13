@@ -8,27 +8,16 @@
       Height="450" Width="800" Background="AntiqueWhite"
       Title="Something Stupid">
 
-        <StackPanel Orientation="Vertical" Name="Page1" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+        <StackPanel Orientation="Vertical" Margin="10" Name="Page1" HorizontalAlignment="Center" VerticalAlignment="Stretch">
             <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
-            <Label Height="50" VerticalContentAlignment="Center">
-                Placeholder
+            <Label Height="50" FontSize="30" VerticalContentAlignment="Center">
+                Hello there !
             </Label>
             </TextBlock>
-            <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
-            Welcome to our subscription form. Please select a language<LineBreak/>
-            </TextBlock>
-            <ComboBox Name="LanguageComboBox" 
-                  Width="80"
-                  ItemsSource="{Binding Path=LanguageList}"
-                  DisplayMemberPath="."
-                  SelectedValuePath="."
-                  SelectedItem="{Binding Path=SelectedLanguage}"
-                  
-                   />
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"><Run Text="Welcome to our subscription form. Yes, we are aware a website would've been a much better way to do this,"/><LineBreak/><Run Text="but hey, this is what we've got !"/><LineBreak/><Run/><LineBreak/><Run Text="Please cross that checkbox bellow and click the big Start button, and we'll be on our way !"/></TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
-                <TextBlock> Selected language :</TextBlock>
-                <TextBlock Height="60" Text="{Binding Path=SelectedLanguage}"/>
+            <TextBlock Height="60" Text="{Binding Path=SelectedLanguage}"/>
             </StackPanel>
 
             <CheckBox Checked="CheckRead" IsChecked="{Binding Path=UseAgreement, Mode=TwoWay}">
@@ -43,13 +32,14 @@
             <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center">
 
 
-                <Button Height="70" Width="400" Padding="10" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="0,70" Click="StartButton_Click">
+                <Button Height="70" Width="400" Padding="10" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="0,70,0,20" Click="StartButton_Click">
 
                     <Label FontSize="30">
                         Start !
 
                     </Label>
                 </Button>
+            <TextBlock TextAlignment="Center"><Run Text="Selected language :"/><Run Language="fr-fr" Text=" English"/></TextBlock>
 
             </StackPanel>
 

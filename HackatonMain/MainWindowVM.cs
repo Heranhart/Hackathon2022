@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace HackatonMain
 {
@@ -21,9 +22,11 @@ namespace HackatonMain
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public DateTime StartTime { get; set; }
         public MainWindowVM()
         {
             this.LanguageList = new List<string>() { "English" };
+            StartTime = DateTime.Now;
             //for(;LanguageList.Count < 100; LanguageList.Add("English")) { }
             
         }

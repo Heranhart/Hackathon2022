@@ -158,9 +158,8 @@ namespace HackatonMain
                     return;
             }
             if (((Vm.PhoneNumber.Contains("69") && MessageBox.Show("So your number contains 69, eh ?\nEheh, nice...", "Nice") == MessageBoxResult.OK) || !Vm.PhoneNumber.Contains("69"))
-                && MessageBox.Show(string.Format("You have entered the phone number`\"{0}\" in reversed.\nDo you confirm your entry ?", string.Join(string.Empty, Vm.PhoneNumber.Reverse().ToList())), "Confirm", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                && MessageBox.Show(string.Format("You have entered the phone number \"{0}\" in reversed.\nDo you confirm your entry ?", string.Join(string.Empty, Vm.PhoneNumber.Reverse().ToList())), "Confirm", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-
                 MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
                 MainWindowVM vm = mainWindow.DataContext as MainWindowVM;
                 vm.PhoneNumber = Vm.PhoneNumber;
@@ -174,7 +173,8 @@ namespace HackatonMain
             {
                 "Thanks for trusting this link !\n\nHere an actual fun fact regarding this madness :",
                 "It is possible to write any integer as a linear combination of two prime numbers !\nIn plain english, that means that for any integer N (positive or negative) and a set of two prime integer a and b (for instance,3 and 7), there exists a set of integers x an y such that :\n\n N = a*x + b*y\n\nOf course, x and y can be either positive or negative as well.",
-                "See how this relates to this page ? \nHere you can freely choose your coefficents (prime or not !), and you have more than two !"
+                "See how this relates to this page ? \nHere you can freely choose your coefficents (prime or not !), and you have more than two !",
+                "Now then, can you find a combination that adds up to your phone number ?"
             };
             foreach (string line in lines)
             {

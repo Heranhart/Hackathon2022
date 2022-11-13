@@ -1,0 +1,43 @@
+﻿<Window x:Class="HackatonMain.AddCharWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HackatonMain" Background="Gold"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        Title="AddCharWindow" >
+    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+        <TextBlock FontSize="20">Select a character to add, and where to add it.</TextBlock>
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" >Add a</TextBlock>
+            <ComboBox Margin="5,10" Grid.Column="1" Width="40" IsTextSearchEnabled="False"
+                  ItemsSource="{Binding Path=Chars}"
+                  DisplayMemberPath="."
+                  SelectedValuePath="."
+                  SelectedItem="{Binding Path=CharChoice}"/>
+            <TextBlock Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Center">to the</TextBlock>
+            <ComboBox ItemsSource="{Binding Path=Where}" Grid.Column="3" Margin="5,10"
+                      Width="90"
+                  DisplayMemberPath="."
+                  SelectedValuePath="."
+                  SelectedItem="{Binding Path=WhereChoice}"/>
+        </Grid>
+
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions> 
+        <Button Click="AddIt" Grid.Column="0" Width="83">Add</Button>
+            <Button IsCancel="True" Grid.Column="1" Width="83">Cancel</Button>
+        </Grid>
+    </StackPanel>
+</Window>

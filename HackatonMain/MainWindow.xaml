@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
         SizeToContent="WidthAndHeight"
-        Title="Why.exe" MaxHeight="450" MaxWidth="800" MouseLeftButtonUp="Window_MouseLeftButtonUp">
+        Title="Why.exe" MaxHeight="450" MaxWidth="800" MouseLeftButtonUp="Window_MouseLeftButtonUp" Closing="Window_Closing">
     <Window.Content>
         <StackPanel Orientation="Vertical">
 
-            <Frame NavigationUIVisibility="Hidden" Name="_main" MouseLeftButtonUp="Window_MouseLeftButtonUp"/>
+            <Frame Navigating="_main_Navigating" NavigationUIVisibility="Hidden" Name="_main" MouseLeftButtonUp="Window_MouseLeftButtonUp"/>
             <TextBlock Background="Aqua" Name="HelpText">
                 Need help ? <Hyperlink Click="Hyperlink_Click">Click here</Hyperlink>.
             </TextBlock>

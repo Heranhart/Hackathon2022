@@ -32,10 +32,10 @@ namespace HackatonMain
         {
             if (this.HasBeenRead)
             {
-
-                MainWindow mw = (MainWindow)Application.Current.MainWindow;
-                MainWindowVM vm = (MainWindowVM)mw.DataContext;
-                vm.PolAgreement = true;
+                //MainWindow mw = (MainWindow)Application.Current.MainWindow;
+                //MainWindowVM vm = (MainWindowVM)mw.DataContext;
+                //vm.PolAgreement = true;
+                DialogResult = true;
             }
         }
 
